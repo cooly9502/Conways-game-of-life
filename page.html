@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="styles.css"></link>
+        <h1>Conway's Game of Life</h1>
+        <h3>TIP: Use the WASD keys to move or use the buttons, press enter to edit a cell.</h3>
+    </head>
+    
+        <body onkeydown="selectWithKeys(event)">
+
+            <div id="mainDiv">
+                <form id="move/edit">
+                    <div id="buttons">
+                    <!-- I used a lot of no-break spaces to format the buttons.-->
+                    <button type="button" onclick="edit(selX, selY)">Edit</button><br/>
+                    &emsp;<button type="button" onclick="up()">Up</button><br/>
+                    <button type="button" onclick="left()">Left</button>
+                    <button type="button" onclick="right()">Right</button><br>
+                    &emsp;<button type="button" onclick="down()">Down</button> 
+                    </div><br/>
+                </form>
+                <p id="p1"></p>
+                <form id="params">
+                    Width:  
+                    <input type="number" name="xMax" value=3 min="1" max="100">&emsp;
+                    Height:  
+                    <input type="number" name="yMax" value=3 min="1" max="100">
+                </form><br/>
+            </div>
+            <button id="runButton" onclick="run()">Run</button><br/>
+            <div id="gameButtons">
+                <button onclick="step()">Step</button><br/>
+                <button onclick="keep()">Keep</button><br/>
+                <button onclick="revert()">Revert</button><br/>
+                <p>Steptime (min 10ms, max 1000ms): </p>
+                <input name="stepTime" type="number" min="10" min="1000" value="50">
+                <button id="autoStepButton" onclick="autoStep()">On/Off/UpdateTime</button>
+            </div>
+            <br/>
+            <button type="button" onclick="showData()">Show grid data (array)</button>
+            <p id="p0"></p><br/>
+
+            <canvas id="myCanvas"></canvas>
+        
+        </body>
+        
+        <script src="script.js"></script>
+        <script src="drawScript.js"></script>
+        <script src="gameScript.js"></script>
+
+</html>

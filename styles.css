@@ -1,0 +1,15 @@
+/*
+styles.css
+created 11.20.17
+*/
+
+body{
+    background-color: black;
+    color: lime;
+}
+
+button{
+    background-color: black;
+    border-color: white;
+    color: lime
+}
